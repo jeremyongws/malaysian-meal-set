@@ -1,25 +1,155 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Food View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="FoodViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jfR-tZ-ubm">
+                                <rect key="frame" x="163" y="62" width="121" height="73"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hX0-fw-s2k">
+                                <rect key="frame" x="36" y="62" width="113" height="73"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="73" id="6XV-B2-VDU"/>
+                                    <constraint firstAttribute="width" constant="113" id="SbV-qf-nxG"/>
+                                </constraints>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lWQ-iT-Vgu">
+                                <rect key="frame" x="0.0" y="135" width="320" height="433"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FoodCell" id="CJW-QQ-L94" customClass="FoodTableViewCell">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CJW-QQ-L94" id="XRc-IN-RM2">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="zfg-QR-Ecd">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBN-cB-KvA">
+                                                            <rect key="frame" x="0.0" y="0.0" width="106.5" height="44"/>
+                                                            <state key="normal" title="Button" image="satay"/>
+                                                            <connections>
+                                                                <action selector="onFoodButtonPressed:" destination="CJW-QQ-L94" eventType="touchUpInside" id="T5a-Uy-C7D"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U3f-Jy-GVR">
+                                                            <rect key="frame" x="106.5" y="0.0" width="107" height="44"/>
+                                                            <state key="normal" title="Button" image="nasilemak"/>
+                                                            <connections>
+                                                                <action selector="onFoodButtonPressed:" destination="CJW-QQ-L94" eventType="touchUpInside" id="C77-74-2m8"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="leZ-QE-St6">
+                                                            <rect key="frame" x="213.5" y="0.0" width="106.5" height="44"/>
+                                                            <state key="normal" title="Button" image="roti"/>
+                                                            <connections>
+                                                                <action selector="onFoodButtonPressed:" destination="CJW-QQ-L94" eventType="touchUpInside" id="rfF-wa-gPQ"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="zfg-QR-Ecd" firstAttribute="leading" secondItem="XRc-IN-RM2" secondAttribute="leading" id="DEo-af-5sc"/>
+                                                <constraint firstAttribute="trailing" secondItem="zfg-QR-Ecd" secondAttribute="trailing" id="Xmp-gk-w3u"/>
+                                                <constraint firstAttribute="bottom" secondItem="zfg-QR-Ecd" secondAttribute="bottom" id="lYb-6P-3Rs"/>
+                                                <constraint firstItem="zfg-QR-Ecd" firstAttribute="top" secondItem="XRc-IN-RM2" secondAttribute="top" id="yu5-tg-w3P"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DrinkCell" id="fkq-MU-AxU" customClass="DrinkTableViewCell">
+                                        <rect key="frame" x="0.0" y="72" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fkq-MU-AxU" id="FJH-FJ-5sx">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="9SO-60-slI">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3K-Sx-hHp">
+                                                            <rect key="frame" x="0.0" y="0.0" width="106.5" height="44"/>
+                                                            <state key="normal" title="Button" image="sirap-bandung"/>
+                                                            <connections>
+                                                                <action selector="onDrinkButtonPressed:" destination="fkq-MU-AxU" eventType="touchUpInside" id="GYu-iz-bIo"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yI0-RW-0Mc">
+                                                            <rect key="frame" x="106.5" y="0.0" width="107" height="44"/>
+                                                            <state key="normal" title="Button" image="soyacincau"/>
+                                                            <connections>
+                                                                <action selector="onDrinkButtonPressed:" destination="fkq-MU-AxU" eventType="touchUpInside" id="i7v-Og-CsI"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K0G-PX-KNu">
+                                                            <rect key="frame" x="213.5" y="0.0" width="106.5" height="44"/>
+                                                            <state key="normal" title="Button" image="teh-tarik"/>
+                                                            <connections>
+                                                                <action selector="onDrinkButtonPressed:" destination="fkq-MU-AxU" eventType="touchUpInside" id="A0y-6q-ary"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="9SO-60-slI" firstAttribute="top" secondItem="FJH-FJ-5sx" secondAttribute="top" id="FTJ-Zp-XHX"/>
+                                                <constraint firstAttribute="bottom" secondItem="9SO-60-slI" secondAttribute="bottom" id="KCX-sx-Qa2"/>
+                                                <constraint firstItem="9SO-60-slI" firstAttribute="leading" secondItem="FJH-FJ-5sx" secondAttribute="leading" id="ZU8-zQ-CpO"/>
+                                                <constraint firstAttribute="trailing" secondItem="9SO-60-slI" secondAttribute="trailing" id="uTL-NV-GRq"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hX0-fw-s2k" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="42" id="3eP-yy-Zyh"/>
+                            <constraint firstItem="hX0-fw-s2k" firstAttribute="bottom" secondItem="jfR-tZ-ubm" secondAttribute="bottom" id="B7f-wR-FF4"/>
+                            <constraint firstItem="jfR-tZ-ubm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="42" id="CFt-41-oTo"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="lWQ-iT-Vgu" secondAttribute="bottom" id="DqY-SW-NjY"/>
+                            <constraint firstItem="lWQ-iT-Vgu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cwK-Dr-i0G"/>
+                            <constraint firstItem="jfR-tZ-ubm" firstAttribute="leading" secondItem="hX0-fw-s2k" secondAttribute="trailing" constant="14" id="d9S-FV-JEP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jfR-tZ-ubm" secondAttribute="trailing" constant="20" id="ehu-be-YTw"/>
+                            <constraint firstItem="lWQ-iT-Vgu" firstAttribute="top" secondItem="hX0-fw-s2k" secondAttribute="bottom" id="pek-Vr-Gfw"/>
+                            <constraint firstAttribute="trailing" secondItem="lWQ-iT-Vgu" secondAttribute="trailing" id="suL-pn-N7o"/>
+                            <constraint firstItem="hX0-fw-s2k" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="yIj-Op-zDA"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="drinkImageView" destination="hX0-fw-s2k" id="cRQ-MF-Ymn"/>
+                        <outlet property="foodImageView" destination="jfR-tZ-ubm" id="WLp-ZW-jm2"/>
+                        <outlet property="tableView" destination="lWQ-iT-Vgu" id="g9e-fm-QuD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="248" y="125"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="nasilemak" width="1600" height="1199"/>
+        <image name="roti" width="800" height="714"/>
+        <image name="satay" width="282" height="179"/>
+        <image name="sirap-bandung" width="194" height="259"/>
+        <image name="soyacincau" width="194" height="259"/>
+        <image name="teh-tarik" width="160" height="128"/>
+    </resources>
 </document>
